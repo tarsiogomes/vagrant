@@ -1,0 +1,23 @@
+# Setup para utilizar WMware Workstation
+
+https://developer.hashicorp.com/vagrant/downloads/vmware
+
+# Iniciar o serviço do Windows
+net.exe start vagrant-vmware-utility
+
+# Criar o vagrantfile no diretorio desejado (sugestao de organizacao para as boxes)
+Vagrant.configure("2") do |config|
+  config.vm.box = "hashicorp/bionic64"
+end
+
+# Comando para iniciar a box
+vagrant up
+
+# Para compatibilidade com o VMware Workstation
+Vagrant.configure("2") do |config|
+  config.vm.provider "vmware_desktop" do |vmware|
+    vmware.allowlist_verified = true
+  end
+end
+
+

@@ -1,0 +1,3 @@
+Instalacao Vagrant
+    sudo apt install vagrant -y
+
